@@ -75,30 +75,20 @@ int main()
     Camera camera(glm::vec3(0.0f, 0.0f, 3.0f), 70.0f, (float)LARGEUR/(float)HAUTEUR, 0.1f, 100.0f);
 
     bool fermer = false;
+    bool touches[1024]{false};
+    const Uint8* etat = SDL_GetKeyboardState(NULL);
 
     float compteur = 0.0f;
 
     while(!fermer){
         SDL_PollEvent(&evenement);
-        switch(evenement.type){
-            case SDL_KEYDOWN:
-                switch(evenement.key.keysym.sym){
-                    case SDLK_ESCAPE:
-                        fermer= true;
-                        break;
-                    case SDLK_w:
-                        camera.deplacer(SDLK_w);
-                        break;
-                    case SDLK_s:
-                        camera.deplacer(SDLK_s);
-                        break;
-                    case SDLK_a:
-                        camera.deplacer(SDLK_a);
-                        break;
-                    case SDLK_d:
-                        camera.deplacer(SDLK_d);
-                        break;
-                }
+        if(evenement.type == SDL_KEYDOWN){
+            if(evenement.key.keysym.sym == SDLK_ESCAPE){
+                fermer = true;
+            }else
+                camera.deplacer(etat);
+        }else{
+            camera.deplacer(etat);
         }
 
         shader.Use();

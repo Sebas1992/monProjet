@@ -30,17 +30,17 @@ class Camera
             return _perspective;
         }
 
-        void deplacer(SDL_Keycode key){
-            if(key == SDLK_w){
+        void deplacer(const Uint8*& key){
+            if(key[SDL_SCANCODE_W] == 1){
                 _position -= _vitesseCamera * _position;
             }
-            else if(key == SDLK_s){
+            if(key[SDL_SCANCODE_S] == 1){
                 _position += _vitesseCamera * _position;
             }
-            else if(key == SDLK_a){
+            if(key[SDL_SCANCODE_A] == 1){
                 _position -= glm::normalize(glm::cross(_cameraAvant, _cameraHaut)) * _vitesseCamera;
             }
-            else if(key == SDLK_d){
+            if(key[SDL_SCANCODE_D] == 1){
                 _position += glm::normalize(glm::cross(_cameraAvant, _cameraHaut)) * _vitesseCamera;
             }
         }
@@ -57,7 +57,6 @@ class Camera
         glm::vec3 _cameraHaut;
         glm::vec3 _cameraAvant;
         GLfloat _angle = 1;
-        bool touches[1024];
 };
 
 #endif // CAMERA_H

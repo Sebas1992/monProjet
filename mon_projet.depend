@@ -24,7 +24,7 @@
 	"Transform.h"
 	"Camera.h"
 
-1480647346 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/main.cpp
+1480695757 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/main.cpp
 	<iostream>
 	<GL/glew.h>
 	<SDL2/SDL.h>
@@ -88,7 +88,7 @@
 1478552924 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/Camera.cpp
 	"Camera.h"
 
-1480647080 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/Camera.h
+1480696368 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/Camera.h
 	<glm/glm.hpp>
 	<glm/gtx/transform.hpp>
 	<SDL2/SDL.h>

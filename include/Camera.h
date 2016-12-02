@@ -22,7 +22,6 @@ class Camera
         }
 
         glm::mat4 viewMatrix(){
-            //_position = glm::vec3(_position);
             return glm::lookAt(_position, _position + _cameraAvant, _haut);
         }
 
@@ -31,6 +30,7 @@ class Camera
         }
 
         void deplacer(const Uint8*& key){
+            GLfloat _vitesseCamera = 5.0f * _deltaTime;
             if(key[SDL_SCANCODE_W] == 1){
                 _position -= _vitesseCamera * _position;
             }
@@ -45,8 +45,22 @@ class Camera
             }
         }
 
+        GLfloat get_deltaTime(){
+            return _deltaTime;
+        }
+        GLfloat get_lastFrame(){
+            return _lastFrame;
+        }
+
+        void set_deltaTime(GLfloat frameActuelle){
+            _deltaTime = frameActuelle - _lastFrame;
+        }
+
+        void set_lastFrame(GLfloat frameActuelle){
+            _lastFrame = frameActuelle;
+        }
+
     private:
-        GLfloat _vitesseCamera = 0.05f;
         glm::mat4 _view;
         glm::mat4 _perspective;
         glm::vec3 _position;
@@ -57,6 +71,8 @@ class Camera
         glm::vec3 _cameraHaut;
         glm::vec3 _cameraAvant;
         GLfloat _angle = 1;
+        GLfloat _deltaTime = 0.0f;
+        GLfloat _lastFrame = 0.0f;
 };
 
 #endif // CAMERA_H

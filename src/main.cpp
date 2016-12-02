@@ -81,6 +81,10 @@ int main()
     float compteur = 0.0f;
 
     while(!fermer){
+        GLfloat currentFrame = (GLfloat)SDL_GetTicks()/1000.0f;
+        camera.set_deltaTime(currentFrame);
+        camera.set_lastFrame(currentFrame);
+
         SDL_PollEvent(&evenement);
         if(evenement.type == SDL_KEYDOWN){
             if(evenement.key.keysym.sym == SDLK_ESCAPE){

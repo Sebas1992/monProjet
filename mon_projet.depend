@@ -1,0 +1,95 @@
+# depslib dependency file v1.0
+1478115690 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/Display.cpp
+	"Display.h"
+
+1478116266 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/Display.h
+	<string>
+	<SDL2/SDL.h>
+
+1478123776 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/main.cpp
+	<iostream>
+	<GL/glew.h>
+	<SDL2/SDL.h>
+	"Shaders.h"
+
+1478647546 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/Shaders.cpp
+	"Shaders.h"
+
+1478647567 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/Shaders.h
+	<string>
+	<fstream>
+	<sstream>
+	<iostream>
+	<GL/glew.h>
+	"Transform.h"
+	"Camera.h"
+
+1478906717 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/main.cpp
+	<iostream>
+	<GL/glew.h>
+	<SDL2/SDL.h>
+	"Shaders.h"
+	"Mesh.h"
+	"Texture.h"
+	"affichage.h"
+	"Transform.h"
+	"Camera.h"
+
+1478566864 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/Mesh.cpp
+	"Mesh.h"
+
+1478566850 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/Mesh.h
+	<GL/glew.h>
+	<glm/glm.hpp>
+	<vector>
+
+1478129635 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/stb_image.c
+	"stb_image.h"
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1478129637 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/stb_image.h
+	<stdio.h>
+
+1478220400 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/Texture.h
+	<string>
+	<GL/glew.h>
+	"stb_image.h"
+	<cassert>
+	<iostream>
+	<vector>
+
+1478220577 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/Texture.cpp
+	"Texture.h"
+
+1478286627 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/transform.cpp
+	"transform.h"
+
+1478286626 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/transform.h
+
+1478564658 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/affichage.cpp
+	"affichage.h"
+
+1478912304 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/affichage.h
+	<GL/glew.h>
+	<SDL2/SDL.h>
+
+1478655738 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/Transform.h
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<SDL2/SDL.h>
+
+1478552924 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/Camera.cpp
+	"Camera.h"
+
+1478912597 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/Camera.h
+	<glm/glm.hpp>
+	<glm/gtx/transform.hpp>
+	<SDL2/SDL.h>
+

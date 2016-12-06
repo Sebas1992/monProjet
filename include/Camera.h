@@ -22,7 +22,7 @@ class Camera
         }
 
         glm::mat4 viewMatrix(){
-            return glm::lookAt(_position, _position + _cameraAvant, _haut);
+            return glm::lookAt(_position, _position + _cameraAvant, _cameraHaut);
         }
 
         glm::mat4 ProjectionMatrix() const{
@@ -43,6 +43,40 @@ class Camera
             if(key[SDL_SCANCODE_D] == 1){
                 _position += glm::normalize(glm::cross(_cameraAvant, _cameraHaut)) * _vitesseCamera;
             }
+                       // std::cout << "position: " << _position.x << ", " << _position.y << ", " << _position.z << std::endl;
+        }
+
+        void deplacerSouris(Sint32& posx, Sint32& posy){
+            if(_premier){
+                dernierePosx = posx;
+                dernierePosy = posy;
+                _premier = false;
+            }
+
+            GLfloat xoffset = posx - dernierePosx;
+            GLfloat yoffset = dernierePosy - posy;
+
+            dernierePosx = posx;
+            dernierePosy = posy;
+
+            GLfloat sensibilite = 0.05f;
+            xoffset *= sensibilite;
+            yoffset *= sensibilite;
+
+            _yaw += xoffset;
+            _pitch += yoffset;
+
+            if(_pitch > 89.0f)
+                _pitch = 89.0f;
+            if(_pitch < -89.0f)
+                _pitch = -89.0f;
+
+            glm::vec3 avant;
+            avant.x = cos(glm::radians(_yaw)) * cos(glm::radians(_pitch));
+            avant.y = sin(glm::radians(_pitch));
+            avant.z = sin(glm::radians(_yaw)) * cos(glm::radians(_pitch));
+            _cameraAvant = glm::normalize(avant);
+            std::cout << "CameraAvant: " << _cameraAvant.x << ", " << _cameraAvant.y << ", " << _cameraAvant.z << std::endl;
         }
 
         GLfloat get_deltaTime(){
@@ -73,6 +107,11 @@ class Camera
         GLfloat _angle = 1;
         GLfloat _deltaTime = 0.0f;
         GLfloat _lastFrame = 0.0f;
+        bool _premier = true;
+        GLfloat _yaw = -90.0f;
+        GLfloat _pitch = 0.0f;
+
+        GLfloat dernierePosx = 400.0f, dernierePosy = 300.0f;
 };
 
 #endif // CAMERA_H

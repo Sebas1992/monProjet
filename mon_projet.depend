@@ -24,7 +24,7 @@
 	"Transform.h"
 	"Camera.h"
 
-1480695757 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/main.cpp
+1481063938 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/main.cpp
 	<iostream>
 	<GL/glew.h>
 	<SDL2/SDL.h>
@@ -34,6 +34,7 @@
 	"affichage.h"
 	"Transform.h"
 	"Camera.h"
+	<string>
 
 1478566864 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/Mesh.cpp
 	"Mesh.h"
@@ -75,11 +76,11 @@
 1478564658 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/affichage.cpp
 	"affichage.h"
 
-1478912304 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/affichage.h
+1481063364 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/affichage.h
 	<GL/glew.h>
 	<SDL2/SDL.h>
 
-1478655738 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/Transform.h
+1480979777 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/Transform.h
 	<glm/glm.hpp>
 	<glm/gtc/matrix_transform.hpp>
 	<glm/gtc/type_ptr.hpp>
@@ -88,7 +89,7 @@
 1478552924 source:/home/sebas/Dropbox/C++/OpenGL/mon_projet/src/Camera.cpp
 	"Camera.h"
 
-1480696368 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/Camera.h
+1481062917 /home/sebas/Dropbox/C++/OpenGL/mon_projet/include/Camera.h
 	<glm/glm.hpp>
 	<glm/gtx/transform.hpp>
 	<SDL2/SDL.h>

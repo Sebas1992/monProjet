@@ -20,8 +20,7 @@ class Transform
         glm::mat4 modelMatrix() const{
             glm::mat4 transform;
             transform = glm::translate(transform, _position);
-            transform = glm::rotate(transform, SDL_GetTicks() * 0.2f, _rotation);
-//            transform = glm::rotate(transform, 0.0f, _rotation);
+            transform = glm::rotate(transform, SDL_GetTicks() * 0.0025f, _rotation);
             transform = glm::scale(transform, _scale);
 
             return transform;

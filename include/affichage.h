@@ -12,6 +12,9 @@ class Affichage
         ~Affichage();
         void clear_window();
         void swap_fenetre();
+		SDL_Window* get_fenetre(){
+			return _fenetre;
+		}
 
     private:
         SDL_Window* _fenetre;

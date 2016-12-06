@@ -7,6 +7,7 @@
 #include"affichage.h"
 #include"Transform.h"
 #include"Camera.h"
+#include<string>
 
 #define LARGEUR 800
 #define HAUTEUR 600
@@ -75,24 +76,31 @@ int main()
     Camera camera(glm::vec3(0.0f, 0.0f, 3.0f), 70.0f, (float)LARGEUR/(float)HAUTEUR, 0.1f, 100.0f);
 
     bool fermer = false;
-    bool touches[1024]{false};
     const Uint8* etat = SDL_GetKeyboardState(NULL);
 
     float compteur = 0.0f;
+
+    SDL_WarpMouseInWindow(fenetre->get_fenetre(), LARGEUR/2, HAUTEUR/2);
+    SDL_SetWindowGrab(fenetre->get_fenetre(), SDL_TRUE);
+    SDL_ShowCursor(0);
 
     while(!fermer){
         GLfloat currentFrame = (GLfloat)SDL_GetTicks()/1000.0f;
         camera.set_deltaTime(currentFrame);
         camera.set_lastFrame(currentFrame);
 
-        SDL_PollEvent(&evenement);
+        while(SDL_PollEvent(&evenement)){
+            if(evenement.type == SDL_MOUSEMOTION){
+                camera.deplacerSouris(evenement.motion.x, evenement.motion.y);
+            }
+        }
         if(evenement.type == SDL_KEYDOWN){
             if(evenement.key.keysym.sym == SDLK_ESCAPE){
                 fermer = true;
             }else
                 camera.deplacer(etat);
-        }else{
-            camera.deplacer(etat);
+            }else{
+                camera.deplacer(etat);
         }
 
         shader.Use();
